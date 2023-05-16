@@ -1,1 +1,1 @@
-# DSA_Practice-JAVA-Solutions
+# DSA_Practice_JAVA_Solutions
