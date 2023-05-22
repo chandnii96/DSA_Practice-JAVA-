@@ -1,0 +1,48 @@
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+
+class MyMenu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MenuTest mt=new MenuTest();
+		mt.setTitle("MENU TEST");
+		mt.setSize(400, 400);
+		mt.setVisible(true);
+		mt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	}
+}
+class MenuTest extends JFrame
+{
+	JPanel panel;
+	MenuTest()
+	{
+		JMenuBar jmb=new JMenuBar();
+		JMenu file=new JMenu("File");
+		JMenuItem open=new JMenuItem("Open");
+		JMenuItem close=new JMenuItem("Close");
+		JMenuItem save=new JMenuItem("Save");
+		JMenuItem ne =new JMenuItem("New");
+		file.add(open);
+		file.add(close);
+		file.add(save);
+		file.add(ne);
+		JMenu edit=new JMenu("Edit");
+		JMenuItem cut=new JMenuItem("Cut");
+		JMenuItem copy=new JMenuItem("Copy");
+		JMenuItem paste=new JMenuItem("Paste");
+		edit.add(cut);
+		edit.add(copy);
+		edit.add(paste);
+		jmb.add(file);
+		jmb.add(edit);
+		panel=new JPanel();
+		panel.add(jmb);
+		add(panel);
+		
+	}
+}
