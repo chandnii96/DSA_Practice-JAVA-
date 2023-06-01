@@ -1,7 +1,7 @@
 import java.util.*;
   
-public class Patterns{
-    public static void HollowHourGlass(int n)
+public class HollowHourGlass{
+    public static void printpattern(int n)
     {
         int i, j;
         //printing the upper part
