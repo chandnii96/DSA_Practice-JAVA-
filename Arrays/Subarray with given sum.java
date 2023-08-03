@@ -17,9 +17,7 @@ is 12.
 // Driver Code Starts
 
 import java.util.*;
-
 import java.lang.";
-
 import java.io.*;
 
 class Main{
@@ -47,33 +45,37 @@ class Solution
 {
     //Function to find a continuous sub-array which adds up to a given number.
     static ArrayList<Integer> subarraySum(int[] arr, int n, int s) 
-  { 
-      int start = 0, end = 0;
-      int currentSum = 0;    
+    {
+        
+        // Your code here
+        int start = 0, end = 0;
+        int currentSum = 0;
+        ArrayList<Integer> result = new ArrayList<>();
+
         while (end < n) {
             // Expand the subarray by including the current element
-            currentSum += arr[end]; 
-            // Shrink the subarray from the left if the sum becomes greater than S
-            while (currentSum > s) {
+            currentSum += arr[end];
+
+            // Shrink the subarray from the left if the sum becomes greater than s
+            while (currentSum > s && start < end) {
                 currentSum -= arr[start];
                 start++;
             }
-            
+
             // Check if we have found the subarray with the target sum
             if (currentSum == s) {
                 // Return the 1-based indexes (add 1 to both start and end)
-                ArrayList<Integer> result = new ArrayList<>();
                 result.add(start + 1);
                 result.add(end + 1);
                 return result;
             }
-            
+
             end++;
         }
-        
+
         // If no subarray found, return [-1]
-        ArrayList<Integer> result = new ArrayList<>();
         result.add(-1);
         return result;
+        
     }
 }
